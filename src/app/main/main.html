@@ -1,0 +1,122 @@
+<!-- Vertical Layout -->
+@if (layout == 0) {
+  <div id="verticalLayout" class="container-fluid layout">
+    <div class="row">
+      <!-- Sidebar -->
+      <div class="col-md-3 col-lg-2 bg-dark text-white p-3" style="height: 100vh">
+        <h5>Menu</h5>
+        <ul class="nav flex-column nav-pills">
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main1">Dashboard</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main2">main2</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main3">main3</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main4">main4</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main5">main5</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main6">main6</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main7">main7</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main8">main8</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main9">main9</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLinkActive="active" routerLink="main10">main10</a>
+          </li>
+        </ul>
+      </div>
+
+      <!-- Content -->
+      <div class="col-md-9 col-lg-10">
+        <button class="btn btn-primary m-3" (click)="toggleLayout()">Toggle Layout</button>
+
+        <br />
+        <button class="btn btn-primary m-3" (click)="setTheme('dark')">Dark</button>
+        <button class="btn btn-primary m-3" (click)="setTheme('purple')">Purple</button>
+        <button class="btn btn-primary m-3" (click)="setTheme('theme1')">Theme 1</button>
+        <button class="btn btn-primary m-3" (click)="setTheme('theme2')">Theme 2</button>
+        <button class="btn btn-primary m-3" (click)="setTheme('theme3')">Theme 3</button>
+        <button class="btn btn-primary m-3" (click)="setTheme('theme4')">Theme 4</button>
+        <router-outlet> </router-outlet>
+      </div>
+    </div>
+  </div>
+}
+
+<!-- Horizontal Layout -->
+@if (layout == 1) {
+  <div id="horizontalLayout" class="layout">
+    <!-- Top Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+      <div class="container-fluid">
+        <a class="navbar-brand" href="#">Brand</a>
+
+        <button class="navbar-toggler" data-bs-toggle="collapse" data-bs-target="#topMenu">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="topMenu">
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main1">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main2">main2</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main3">main3</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main4">main4</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main5">main5</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main6">main6</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main7">main7</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main8">main8</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main9">main9</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link" routerLinkActive="active" routerLink="main10">main10</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- Content -->
+    <div class="container-fluid p-4">
+      <button class="btn btn-primary m-3" (click)="toggleLayout()">Toggle Layout</button>
+
+      <br />
+      <button class="btn btn-primary m-3" (click)="setTheme('dark')">Dark</button>
+      <button class="btn btn-primary m-3" (click)="setTheme('purple')">Purple</button>
+      <button class="btn btn-primary m-3" (click)="setTheme('theme1')">Theme 1</button>
+      <button class="btn btn-primary m-3" (click)="setTheme('theme2')">Theme 2</button>
+      <button class="btn btn-primary m-3" (click)="setTheme('theme3')">Theme 3</button>
+      <button class="btn btn-primary m-3" (click)="setTheme('theme4')">Theme 4</button>
+      <router-outlet> </router-outlet>
+    </div>
+  </div>
+}

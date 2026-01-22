@@ -1,23 +1,27 @@
-import { Routes } from '@angular/router';
+import { Injectable } from '@angular/core';
 import { Main } from './main/main';
+import { Router, Routes } from '@angular/router';
 
-export const routes: Routes = [
-  { path: '', redirectTo: '/main1', pathMatch: 'full' },
-  {
+@Injectable({
+  providedIn: 'root',
+})
+export class DbRouter {
+  constructor(private router: Router) {}
+  db_router: any = {
     path: '',
     component: Main,
     children: [
       {
         path: 'main1',
 
-        loadComponent: () => import('./main/main1/main1').then((m) => m.Main1),
-      },
-      {
-        path: 'main2',
         loadComponent: () =>
           new Date().getTime() % 2 == 0
             ? import('./main/main1/main1').then((m) => m.Main1)
             : import('./main/main2/main2').then((m) => m.Main2),
+      },
+      {
+        path: 'main2',
+        loadComponent: () => import('./main/main2/main2').then((m) => m.Main2),
       },
       {
         path: 'main3',
@@ -52,6 +56,10 @@ export const routes: Routes = [
         loadComponent: () => import('./main/main10/main10').then((m) => m.Main10),
       },
     ],
-  },
-  // { path: '**', redirectTo: '/main1' },
-];
+  };
+
+  loadRoutes() {
+    const newConfig = [...this.router.config, ...this.db_router];
+    this.router.resetConfig(newConfig);
+  }
+}

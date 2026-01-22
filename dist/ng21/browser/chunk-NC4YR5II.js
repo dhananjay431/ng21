@@ -1,0 +1,1 @@
+import{La as i,la as n,xa as a}from"./chunk-GG2YZFYP.js";var o=class t{static \u0275fac=function(e){return new(e||t)};static \u0275cmp=a({type:t,selectors:[["app-main5"]],decls:1,vars:0,consts:[["src",n`https://dhananjaypro.in/`,"frameborder","0","width","100%","height","800"]],template:function(e,r){e&1&&i(0,"iframe",0)},encapsulation:2})};export{o as Main5};
